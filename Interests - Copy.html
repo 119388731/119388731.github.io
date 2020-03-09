@@ -1,0 +1,134 @@
+<html>
+
+<head>
+<title>119388731</title>
+
+<link href='https://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Kotta One' rel='stylesheet'>
+<link href="Interests.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div id="banner">
+		<h1> Interests </h1>
+	</div>
+
+
+	<div id="divcontainer">
+
+
+		<ul class="nav">
+			<li><a  href="bootstrap/index.html" title="CV">CV</a></li>
+			<li><a class="active" href="interests.html" title="Interests">Interests</a></li>
+			<li><a href="SCC.html" title="Consulting">About Consulting</a></li>
+		</div>
+	  
+		<div id="content">
+			<h2><center><u>Sports</u></center></h2>
+			<p><h3>Soccer </h3><p>
+			<p><h5> One of my inerests is soccer.</h5></p>
+			<p><h6><i>Chelsea FC is my favourite soccer club.</i></h6></p>
+			<p><li> Chelsea Football Club are an English professional football club based in Fulham, London. Founded in 1905, they compete in the Premier League, the top division of English football.</li> <br><li> Chelsea are among England's most successful clubs; they have been league champions six times and won over thirty competitive honours, including six European trophies.</li><br><li> Based on attendance figures, the club have the sixth-largest fanbase in England.</li><br><li>	 Chelsea are the sixth most valuable football club in the world, worth £2.13 billion ($2.576 billion), and are the eighth highest-earning football club in the world, with earnings of over €428 million in the 2017–18 season.</li></p>
+			
+			<p><h3>Ice Hockey </h3><p>
+			<p><h5> Another inerest of mine is ice hockey.</h5></p>
+			<p><h6><i>The Pittsburgh Penguins are my favourite team.</i></h6></p>
+			<p><li> The Pittsburgh Penguins are a professional ice hockey team based in Pittsburgh. They compete in the National Hockey League (NHL) as a member of the Metropolitan Division of the Eastern Conference. </li> <br><li> They have qualified for six Stanley Cup Finals, winning the Stanley Cup five times – in 1991, 1992, 2009, 2016, and 2017. Along with the Edmonton Oilers, the Penguins are tied for the most Stanley Cup championships.</li><br><li> With their Stanley Cup wins in 2016 and 2017, the Penguins became the first back-to-back champions in 19 years (since the 1997–98 Detroit Red Wings) and the first team to do so since the introduction of the NHL salary cap. They also became the fifth team to accomplish this feat multiple times.</li></p>
+			
+			<h2><center><u>Travel</u></center></h2>
+			<p><h3>Budapest </h3><p>
+			<p><h5>I will be going to Budapest in the Summer of 2020.</h5></p>
+			 <p><li> Budapest is the capital and the most populous city of Hungary, and the ninth-largest city in the European Union by population within city limits. </li> <br><li> The city has an estimated population of 1,752,286 over a land area of about 525 square kilometres (203 square miles).</li><br><li> Some of Budespests most famous tourist attractions include:
+				<ol>
+					<li>Buda Castle & Castle Hill</li>
+					<li>Hungarian Parliament Building & Crown Jewels</li>
+					<li>St. Stephen's Basilica</li>
+					<li>Széchenyi Thermal Bath</li>
+				</ol>
+			 </li></p>
+			 
+			 <p><h3>Athens </h3><p>
+			<p><h5>I went to Athens in the Summer of 2013.</h5></p>
+			 <p><li> Athens is the capital and largest city of Greece. Athens dominates the Attica region and is one of the world's oldest cities, with its recorded history spanning over 3,400 years and its earliest human presence started somewhere between the 11th and 7th millennium BC </li> <br><li>  A center for the arts, learning and philosophy, home of Plato's Academy and Aristotle's Lyceum, it is widely referred to as the cradle of Western civilization and the birthplace of democracy, largely because of its cultural and political impact on the European continent, and in particular the Romans.</li><br><li> Some of Budespests most famous tourist attractions include:
+				<ol>
+					<li> The Acropolis</li>
+					<li>The Pláka and Anafiotika Neighborhoods</li>
+					<li>Ancient Agora: Ruins of the Marketplace</li>
+					<li>Olympieion: Temple of Olympian Zeus
+</li>
+				</ol>
+			 </li></p>
+			
+		<div id="scroller" style="width: 400px; height: 200px; margin: 0 auto;">
+		<div class="innerScrollArea">
+			<ul>
+				<!-- Define photos here -->
+				<li><img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png" width="300" height="150" /></li>
+				<li><img src="https://cdn.vox-cdn.com/thumbor/eGWOYyUfRqow0ttSyyT1aShyXDc=/0x0:4603x2101/1200x900/filters:focal(1544x371:2280x1107)/cdn.vox-cdn.com/uploads/chorus_image/image/63147094/GettyImages_1002352324.0.jpg" width="300" height="150" /></li>
+				<li><img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Pittsburgh_Penguins_logo_%282016%29.svg/1200px-Pittsburgh_Penguins_logo_%282016%29.svg.png" width="300" height="150"></li>
+				<li><img src="https://hungarytoday.hu/wp-content/uploads/2020/03/budapest-3110285_1920.jpg" width="300" height="150" /></li>
+				
+			</ul>
+		</div>
+		
+		
+
+	</div>
+			
+</div>
+
+</div>
+
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var scroller = $('#scroller div.innerScrollArea');
+        var scrollerContent = scroller.children('ul');
+        scrollerContent.children().clone().appendTo(scrollerContent);
+        var curX = 0;
+        scrollerContent.children().each(function(){
+            var $this = $(this);
+            $this.css('left', curX);
+            curX += $this.outerWidth(true);
+        });
+        var fullW = curX / 2;
+        var viewportW = scroller.width();
+
+        // Scrolling speed management
+        var controller = {curSpeed:0, fullSpeed:2};
+        var $controller = $(controller);
+        var tweenToNewSpeed = function(newSpeed, duration)
+        {
+            if (duration === undefined)
+                duration = 600;
+            $controller.stop(true).animate({curSpeed:newSpeed}, duration);
+        };
+
+        // Pause on hover
+        scroller.hover(function(){
+            tweenToNewSpeed(0);
+        }, function(){
+            tweenToNewSpeed(controller.fullSpeed);
+        });
+
+        // Scrolling management; start the automatical scrolling
+        var doScroll = function()
+        {
+            var curX = scroller.scrollLeft();
+            var newX = curX + controller.curSpeed;
+            if (newX > fullW*2 - viewportW)
+                newX -= fullW;
+            scroller.scrollLeft(newX);
+        };
+        setInterval(doScroll, 20);
+        tweenToNewSpeed(controller.fullSpeed);
+    });
+</script>
+
+</body>
+
+
+</html>
