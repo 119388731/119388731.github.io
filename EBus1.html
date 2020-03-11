@@ -1,0 +1,110 @@
+
+<html>
+
+<head>
+<title>119388731</title>
+
+
+<link href='https://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Kotta One' rel='stylesheet'>
+<link href="style.css" rel="stylesheet">
+
+</head>
+
+
+
+
+<body>
+
+
+	<div id="banner">
+		<h1> EBusiness </h1>
+	</div>
+
+
+<div id="divcontainer">
+
+
+	<ul class="nav">
+		<li><a href="bootstrap/index.html" title="CV">CV</a></li>
+ 		<li><a href="interests.html" title="Interests">Interests</a></li>
+		<li><a href="SCC.html" title="About Consulting">About Consulting</a></li>
+		<li><a class="active" href="EBus1.html" title="Services">Services</a></li>
+	</div>
+  
+  
+	<div id="content">
+  		<center><h3>Select a Consulting Service</h3>
+  		<input type="radio" id="h" name="service" value="200" onclick="calcSub(this.value)">
+		<label for="hyperautomation">Hyperautomation @ €200</label><br>
+		<input type="radio" id="m" name="service" value="500" onclick="calcSub(this.value)">
+		<label for="MultiExperienced">MultiExperienced @ €500</label><br>
+		<input type="radio" id="d" name="service" value="1000" onclick="calcSub(this.value)">
+		<label for="Distributed Cloud">Distributed Cloud @ €1000</label></p>
+		
+		<div id="myDIV">
+		<p id="SubTotal"></p>
+		<p id="Discount"></p>
+		<p id="VAT"></p>
+		<p id="Total"></p>
+		</div>
+		
+		<button class="button button1" onclick="calcDisp()" id="Display">Calculate Cost</button> 
+		<button class="button button2" onclick="uncheck()">Clear Choice</button>
+		</center>
+	</div>
+
+</div>
+
+<script>
+
+var argSelection = 0;
+var argDiscount, argVat, argPrice;
+			
+function calcSub() {
+	if (h.checked == true){
+		argSelection = h.value;
+	} else if (m.checked == true){
+		argSelection = m.value;
+	} else if (d.checked == true){
+		argSelection = d.value;
+	}
+	calcVatTotal(argSelection);
+}
+			
+function calcVatTotal(parmSelection){
+	argDiscount = 0.05 * parmSelection;
+	argVat =   -0.2 * parmSelection;
+	argPrice = parmSelection -argVat -argDiscount;
+	display();
+}
+function calcDisp() {
+	document.getElementById("SubTotal").innerHTML = "The current subtotal is " + "        " + "€" + argSelection;
+	document.getElementById("Discount").innerHTML = "The discount is " + "                " + "€" + argDiscount.toFixed(2);
+	document.getElementById("VAT").innerHTML = "The Vat is " + "                     " + "€" + argVat.toFixed(2);
+	document.getElementById("Total").innerHTML = "The Total is "  + "                  " + "€"+ argPrice.toFixed(2);
+	var P = document.getElementById('myDIV');
+	if (P.style.visibility === 'hidden') {
+		P.style.visibility = 'visible';
+	}
+}
+			
+
+function uncheck() {
+  document.getElementById("h").checked = false;
+  document.getElementById("m").checked = false;
+  document.getElementById("d").checked = false;
+  var P = document.getElementById('myDIV');
+  if (P.style.visibility === 'hidden') {
+    P.style.visibility = 'visible';
+  } else {
+    P.style.visibility = 'hidden';
+  }
+}
+
+</script>
+
+</body>
+
+
+</html>
