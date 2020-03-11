@@ -1,0 +1,146 @@
+
+<html>
+
+<head>
+<title>Div Tags for Layout - Example</title>
+
+
+<style type="text/css">
+
+
+#banner{
+	position: fixed;
+	
+	top: 0px;
+	left: 200px;
+
+	right: 0px;
+
+	height:20%;
+	width:100%;
+
+	background-color: #1ecbe1;	
+	border: none;
+
+	text-align:center;
+}
+
+#divcontainer{
+	position: relative;
+
+	top: 0px;
+	left: 0px;
+
+	right: 0px;
+
+	height:100%;
+	width:100%;
+}
+
+#navpanel{
+	position: left;
+
+	top: 0%;
+	left: 0%; 
+
+	right: 0%;
+	
+	padding-top: 50px ;
+
+
+	height:100%;
+	width: 200px;
+	
+	background-color: #FBB7C6;
+	border: dashed thin black; 
+	
+}
+
+
+#content{
+	position: absolute;
+
+	top: 30%;
+	left: 29%;
+
+	right: 0%;
+
+	height:70%;
+	width:65%;
+	
+
+	background-color: yellow;
+	border: ridge #FBB7C6 ;
+      
+}
+
+.tooltip { 
+/* container for tooltip */
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px groove black;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #B7B7B7;
+  color: #E9718E;
+  text-align: center;
+//  border-radius: 6px;
+//  padding: 3px 0;
+	border: dashed;
+
+  /* Position the tooltip to the foreground using the 3rd axis (z)*/
+  position: absolute;
+  z-index: 1;
+}
+
+
+/* make tooltip visable upon hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
+</style>
+
+</head>
+
+
+
+
+<body>
+
+
+<div id="banner">
+  <h1> This div is the Banner Area (put a banner image or text here) </h1>
+</div>
+
+
+<div id="divcontainer">
+
+	<div id="navpanel">
+		 <a href="index.html" title="Home">Home</a><br />
+ 		 <a href="about.html" title="About Us">About Us</a>
+	</div>
+
+  
+	<div id="content">
+  		<h3>This div is the content area.</h3>
+  		<p>Some text here</p>
+ 		 <p>Some more text here</p>
+ 		 <p>etc<br /> </p>
+		<div class="tooltip"> Hover over me
+  			<span class="tooltiptext">Tooltip text</span>
+		</div>
+
+	</div>
+
+</div>
+
+</body>
+
+
+</html>
