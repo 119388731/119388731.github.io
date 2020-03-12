@@ -2,11 +2,11 @@
 <html>
 
 <head>
-<title>119388731</title>
-
-
+<title>119388731- EBusiness</title>
+<!--External design links-->
 <link href='https://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Kotta One' rel='stylesheet'>
+<link rel="icon" type="image/png" href="http://simpleicon.com/wp-content/uploads/list_v2.png">
 <link href="style.css" rel="stylesheet">
 
 </head>
@@ -24,7 +24,7 @@
 
 <div id="divcontainer">
 
-
+	<!--navigation bar-->
 	<ul class="nav">
 		<li><a href="bootstrap/index.html" title="CV">CV</a></li>
  		<li><a href="interests.html" title="Interests">Interests</a></li>
@@ -32,7 +32,7 @@
 		<li><a class="active" href="EBus1.html" title="Services">Services</a></li>
 	</div>
   
-  
+  <!--Choices for Consulting Service-->
 	<div id="content">
   		<center><h3>Select a Consulting Service</h3>
   		<input type="radio" id="h" name="service" value="200" onclick="calcSub(this.value)">
@@ -42,13 +42,14 @@
 		<input type="radio" id="d" name="service" value="1000" onclick="calcSub(this.value)">
 		<label for="Distributed Cloud">Distributed Cloud @ €1000</label></p>
 		
+		<!--Divider for holding Prices-->
 		<div id="myDIV">
 		<p id="SubTotal"></p>
 		<p id="Discount"></p>
 		<p id="VAT"></p>
 		<p id="Total"></p>
 		</div>
-		
+		<!--buttons to enable javascript-->
 		<button class="button button1" onclick="calcDisp()" id="Display">Calculate Cost</button> 
 		<button class="button button2" onclick="uncheck()">Clear Choice</button>
 		</center>
@@ -57,10 +58,10 @@
 </div>
 
 <script>
-
+<!--setting variables for javascript-->
 var argSelection = 0;
 var argDiscount, argVat, argPrice;
-			
+<!--calculating the cost of the service-->
 function calcSub() {
 	if (h.checked == true){
 		argSelection = h.value;
@@ -71,13 +72,14 @@ function calcSub() {
 	}
 	calcVatTotal(argSelection);
 }
-			
+<!--calculating the vat amount-->
 function calcVatTotal(parmSelection){
 	argDiscount = 0.05 * parmSelection;
 	argVat =   -0.2 * parmSelection;
 	argPrice = parmSelection -argVat -argDiscount;
 	display();
 }
+<!--displaying the final cost-->
 function calcDisp() {
 	document.getElementById("SubTotal").innerHTML = "The current subtotal is " + "        " + "€" + argSelection;
 	document.getElementById("Discount").innerHTML = "The discount is " + "                " + "€" + argDiscount.toFixed(2);
@@ -88,8 +90,7 @@ function calcDisp() {
 		P.style.visibility = 'visible';
 	}
 }
-			
-
+<!--choice for clear selection-->
 function uncheck() {
   document.getElementById("h").checked = false;
   document.getElementById("m").checked = false;
